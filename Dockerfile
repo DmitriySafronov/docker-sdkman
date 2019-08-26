@@ -1,12 +1,15 @@
-FROM donbeave/oracle-jdk
+FROM ubuntu:latest
 
-MAINTAINER Alexey Zhokhov <alexey@zhokhov.com>
+MAINTAINER Dmitriy Safronov <zimniy@cyberbrain.pw>
+
+ENV LANG C.UTF-8
 
 ENV SDKMAN_DIR /usr/local/sdkman
 
 RUN set -x \
-    && apt-get update \
-    && apt-get install -y unzip --no-install-recommends \
+    && apt-get update -y \
+    && apt-get dist-upgrade -y \
+    && apt-get install -y curl unzip zip sed ca-certificates mc --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -s get.sdkman.io | bash
@@ -19,5 +22,9 @@ RUN set -x \
 WORKDIR $SDKMAN_DIR
 
 COPY docker-entrypoint.sh /
+
+RUN set -x \
+    chmod a+x "/docker-entrypoint.sh" \
+    chmod a+x "$SDKMAN_DIR/bin/sdkman-init.sh"
 
 ENTRYPOINT ["/docker-entrypoint.sh"]

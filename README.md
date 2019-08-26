@@ -1,22 +1,21 @@
 # SDKMAN! (Docker)
 
-[![Build Status](https://circleci.com/gh/donbeave/docker-sdkman.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/donbeave/docker-sdkman)
-[![Analytics](https://ga-beacon.appspot.com/UA-71075299-1/docker-sdkman/main-page)](https://github.com/igrigorik/ga-beacon)
+[Original image](https://github.com/donbeave/docker-sdkman) hadn't suited my needs, so I've did this fork 
 
 ### Docker image
 
-https://hub.docker.com/r/donbeave/sdkman
+https://hub.docker.com/r/zimniy/sdkman
 
 #### How to use?
 
 In your `Dockerfile` use the following:
 ```
-FROM donbeave/sdkman
+FROM zimniy/sdkman
 
 ...
 ```
 
-Copyright and license
+Original copyright and license
 ---------------------
 
 Copyright 2015 Alexey Zhokhov under the [Apache License, Version 2.0](LICENSE). Supported by [AZ][zhokhov].
