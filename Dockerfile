@@ -9,7 +9,7 @@ ENV SDKMAN_DIR /usr/local/sdkman
 RUN set -x \
     && apt-get update -y \
     && apt-get dist-upgrade -y \
-    && apt-get install -y curl unzip zip sed ca-certificates mc --no-install-recommends \
+    && apt-get install -y curl unzip zip ca-certificates --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -s get.sdkman.io | bash
